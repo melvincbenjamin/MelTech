@@ -3,7 +3,7 @@ import { Moon, Sun } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export const ThemeToggle = () => {
-  // Read theme on first load
+  // Read theme from localStorage on first load
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("theme") === "dark";
   });
@@ -28,9 +28,10 @@ export const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className= {cn(
-      "fixed max-sm:hidden top-5 right-5 z-50 rounded-full transition-colors duration-300",
-      "focus:outline-none"
+      className={cn(
+        "fixed top-3 center-3 sm:top-5 sm:right-5 z-50 p-2 rounded-full bg-gray-200 dark:bg-gray-800",
+        "shadow-lg hover:shadow-xl transition-all duration-300",
+        "focus:outline-none"
       )}
     >
       {isDarkMode ? (
